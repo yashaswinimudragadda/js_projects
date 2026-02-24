@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> demo user print</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    </head>
+    <body>
+     <body>
+            <script type="text/javascript">
+                length = parseInt(prompt("Enter your length:"));   
+               console.log(length)
+                width= parseInt(prompt("Enter your width:"))
+                 console.log(width)
+                 area=length*width
+                console.log("area of the reactangle is "+area)
+
+                // area of circle
+
+                radius=parseInt(prompt("enter your radius"))
+                console.log("entered radius = "+radius)
+                 area = parseFloat(Math.PI * Math.pow(radius, 2));
+                 console.log("area of the circle = "+area)
+
+                 // area of triangle
+
+             height = parseInt(prompt("Enter your height:"));   
+               console.log("entered height= "+height)
+                base= parseInt(prompt("Enter your base:"))
+                 console.log("entered base= "+base)
+                 area=1/2*(height*base)
+                console.log("area of the triangle is "+area)
+
+                //simple interset
+                p = parseInt(prompt("Enter your principle amount:"));   
+               console.log("entered principle= "+p)
+                t= parseInt(prompt("Enter your time:"))
+                 console.log("entered time= "+t)
+                  r= parseInt(prompt("Enter your rate:"))
+                 console.log("entered rate= "+r)
+                 si=parseInt(1/100*(p*r*t))
+                console.log("area of the simple interest is "+si)
+
+                // compound interset
+                p = parseInt(prompt("Enter your principle amount:"));   
+               console.log("entered principle= "+p)
+                t= parseInt(prompt("Enter your time:"))
+                 console.log("entered time= "+t)
+                  r= parseInt(prompt("Enter your rate:"))
+                 console.log("entered rate= "+r)
+            
+
+                amount = p * Math.pow((1 + r/100), t)
+                 console.log("compound interset= "+amount)
+
+
+                 // celsius to Fahrenheit 
+
+                 celsius=parseInt(prompt("enter the celsius value here"))
+                 console.log("entered celsius value "+celsius)
+                 fahrenheit=(celsius*(9/5)+32)
+                 console.log("converted fahrenheit value is "+fahrenheit)
+
+                 // fahrenheit to celsius
+
+                 fahrenheit =parseInt(prompt("enter the fahrenheit value here"))
+                 console.log("entered fahrenheit value is "+fahrenheit)
+                 celsius=(fahrenheit-32)*(5/9)
+                 console.log("converted celsius value is "+celsius)
+                 
+
+
+
+            </script>
+        </body>
+    
+</html>
