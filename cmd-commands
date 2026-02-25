@@ -1,0 +1,38 @@
+date to view the date
+time for time
+md or mkdir for making a directory
+cd or chdir for to change into the create directory
+cd.. for come out of the directory
+cd/  to come to root directory
+dir to list all the folders or files
+rd/s used to remove directory that  is not empty
+rd or rmdir used to remove directory
+
+
+
+
+c:>
+c:>md bharat
+c:/cd bharat
+c:/bharat>
+c:/bharat> md ap
+c:/bharat>md mp
+c:/bharat>cd ap
+c:/bharat/ap>md vji
+c:/bharat/ap>md machilipatnam
+c:/bharat/ap>cd..
+c:/bharat>cd guntur
+c:/bharat/guntur>md naz
+c:/bharat/guntur>md bru
+C:\Users\Admin\bharat>tree C:\Users\Admin\bharat /f                  for folder structure
+Folder PATH listing
+Volume serial number is 00000045 EE0F:40FA
+C:\USERS\ADMIN\BHARAT
+├───guntur
+│   ├───bru
+│   └───naz
+└───krishna
+    ├───guntur
+    └───vji
+
+C:\Users\Admin\bharat>
