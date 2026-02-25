@@ -1,0 +1,4 @@
+a=parseInt(prompt("enter the a value: "))
+b=parseInt(prompt("enter the b value:"))
+t=(a>b)?a:b
+console.log(t, "is the big")
