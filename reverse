@@ -1,0 +1,15 @@
+//reverse number
+
+n=parseInt(prompt("enter the value"))
+t=n
+r=0
+s=0
+i=0
+while(n!=0){
+    r=n%10
+    s=s*10+r
+    n=Math.floor(n/10)
+}
+ console.log(s," this is the reverse number of given number")
+
+
