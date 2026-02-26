@@ -1,0 +1,13 @@
+//sum of digits and count of the number of the digits in the given number
+
+n=parseInt(prompt("enter the value"))
+s=0,r=0,c=0;
+while(n>0){
+    r=n%10
+    s=s+r
+    c=c+1
+    n=Math.floor(n/10)
+}
+console.log(c,"is the number of digits in the given number.")
+console.log(s,"is the sum of the digits in the given number.")
+
