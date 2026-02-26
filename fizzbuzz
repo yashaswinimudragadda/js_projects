@@ -1,0 +1,19 @@
+//fizzbuzz
+
+n=parseInt(prompt("enter the value"))
+i=1
+while(i<=n){
+if(i%2==0 && i%5==0){
+    console.log("fizzbuzz")
+}
+else if(i%2==0){
+    console.log("fizz")
+}
+else if(i%5==0){
+    console.log("bizz")
+}
+else{
+    console.log(i)
+}
+i++
+}
