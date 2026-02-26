@@ -1,0 +1,13 @@
+//prime numbers
+
+n=parseInt(prompt("enter the value"))
+i=1
+while(i<=n){
+    if(i%2!=0){
+        console.log("prime")
+    }
+    else{
+        console.log(i)
+    }
+  i++
+}
