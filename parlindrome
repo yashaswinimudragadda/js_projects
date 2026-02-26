@@ -1,0 +1,18 @@
+//parlindrome
+
+n=parseInt(prompt("enter the value"))
+t=n
+r=0
+s=0
+i=0
+while(n!=0){
+    r=n%10
+    s=s*10+r
+    n=Math.floor(n/10)
+}
+if(t==s){
+    console.log("the given number is parlindrome.")
+}
+else{
+    console.log("the given number is not parlindrome.")
+}
