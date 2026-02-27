@@ -1,0 +1,7 @@
+do{
+    a=parseInt(prompt("enter your a value in numbers: "))
+    b=parseInt(prompt("enter your b value in numbers: "))
+    sum=a+b
+    console.log("sum of a and b = ",sum)
+    ch=console.log("do you want to sum aganin? press y or Y")
+}while(ch=="Y"|| ch=="y")
