@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> terminate statements demo for break </title>
+    </head>
+    <body>
+        <script>
+            for(i=0;i<=5;i++){
+                if(i>10)
+                break;
+                console.log(i)
+                document.write(i)
+
+            }
+        </script>
+    </body>
+</html>
