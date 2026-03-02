@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> terminate statements demo for continue statement</title>
+    </head>
+    <body>
+        <script>
+            for(i=0;i<=10;i++){
+                if(i%2==0)
+                continue
+                document.write(i)
+                document.write("<br>")
+
+            }
+        </script>
+    </body>
+</html>
