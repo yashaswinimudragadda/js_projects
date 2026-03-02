@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> terminate statements demo for continue statement</title>
+    </head>
+    <body>
+       <script>
+        rows=10
+        for(i=0;i<=rows;i++){
+            for(s=1;s<=rows-i;s++){
+                document.write("&nbsp;&nbsp;")
+            }
+        
+            for(j=1;j<=i;j++){
+                document.write(j+"&nbsp;")
+            }
+            document.write("<br>")
+        }
+       </script>
+    </body>
+</html>
