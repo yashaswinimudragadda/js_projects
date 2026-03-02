@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> demo pattern using nested  do while loop</title>
+    </head>
+    <body>
+        <script>
+            i=1
+            do{
+                j=1
+                do{ 
+                    document.write("*")
+                    j++
+                }while(j<=4);
+                document.write("<br>");
+                i++
+            }while(i<=4);
+        </script>
+    </body>
+</html>
