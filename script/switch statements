@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> terminate statements demo for continue statement</title>
+    </head>
+    <body>
+        <script>
+        document.writeln("1.pen")
+        document.writeln("2.pencil")
+        document.writeln("3.sharpner")
+        document.writeln("4.bag")
+
+        switch(2){
+            case 1:
+                document.write("pen selected")
+                break
+            case 2:
+                document.writeln("pencil selected")
+                break
+            case 3:
+                document.writeln("sharpner selected")
+                break
+            case 4:
+                document.writeln("bag selected") 
+                break
+            default:
+                document.writeln("invalid")               
+        }
+        </script>
+    </body>
+</html>
