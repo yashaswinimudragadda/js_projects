@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> demo pattern using nested  for loop</title>
+    </head>
+    <body>
+        <script>
+            for(i=1;i<=5;i++){
+                for(j=1;j<=5;j++){
+                    document.write("*")
+                }
+                document.write("<br>")
+            }
+        </script>
+    </body>
+</html>
