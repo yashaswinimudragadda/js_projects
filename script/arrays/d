@@ -6,3 +6,9 @@ console.log(a[i])
 a= new Array(10,20,"hello world",4099.78,"b",50)
 for(i=0;i<a.length;i++)
 console.log(a[i])
+
+
+car= new Array("saab","volvo","bmw")
+for(i=0;i<3;i++){
+    console.log(car[i])
+}
