@@ -1,0 +1,14 @@
+
+coffee=["sugar","cream"]
+i=parseInt(prompt("enter a number"))
+if(i==0){
+    console.log("you selected coffee with ",coffee[0])
+    
+}
+else if(i==2)
+{
+console.log("you selected coffee with ",coffee[0],"&",coffee[1])
+}
+else if(i==1){
+   console.log("you select coffee with ",coffee[1])
+}
