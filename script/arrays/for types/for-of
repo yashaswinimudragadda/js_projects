@@ -1,0 +1,4 @@
+car= new Array("saab","volvo","bmw")
+for(i of car){
+    console.log(i) // here we should use i only in case car[i] then the output is undefined
+}
