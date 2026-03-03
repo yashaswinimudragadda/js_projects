@@ -1,0 +1,4 @@
+car= new Array("saab","volvo","bmw")
+for(i in car){
+    console.log(car[i])
+}
