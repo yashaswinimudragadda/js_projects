@@ -16,3 +16,13 @@ console.log(x) // sort all the elements in an array in ascending order
 console.log(x.includes("desk"));// check weather the give value in the array or not
 
 console.log(x.indexOf("eraser"))// return the index of the given value in the array.
+
+x.reverse();
+console.log(x) //reutrn the the reverse ordered array to the order we entered.
+
+
+x.fill("nipuna")
+console.log(x)
+
+x.fill("nipuna",1,x.length)
+console.log(x)  // fills the elements in the array with the given value it means 
