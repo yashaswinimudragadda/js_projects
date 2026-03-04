@@ -7,3 +7,7 @@ x.pop( )
 console.log(x) // removes the last element from the array
 x.shift()
 console.log(x) // removes the first element from the array
+
+x.sort()
+console.log(x) // sort all the elements in an array in ascending order
+
