@@ -41,3 +41,11 @@ y=x.join("-")
 console.log(y) // joins the  elements in the array with the element provided.
 
 
+x=["pen","pencil","book","eraser","scale","bag","book","desk","chair","table"]
+
+
+console.log(x.at(2))  // fetches the element from the place where it elements are stored
+
+
+
+
