@@ -3,3 +3,5 @@ console.log(x)
 
 x.push("inkpen")
 console.log(x) // adds th element at the end of the array
+x.pop( )
+console.log(x) // removes the last element from the array
