@@ -11,3 +11,6 @@ console.log(x) // removes the first element from the array
 x.sort()
 console.log(x) // sort all the elements in an array in ascending order
 
+
+
+console.log(x.includes("desk"));// check weather the give value in the array or not
