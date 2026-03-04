@@ -26,3 +26,18 @@ console.log(x)
 
 x.fill("nipuna",1,x.length)
 console.log(x)  // fills the elements in the array with the given value it means 
+
+
+x=["pen","pencil","book","eraser","scale","bag","book","desk","chair","table"]
+y=["apple","mango","grape","orange"]
+
+z=x.concat(y)
+console.log(z)  // joins the x and y 
+
+
+x=["pen","pencil","book","eraser","scale","bag","book","desk","chair","table"]
+
+y=x.join("-")
+console.log(y) // joins the  elements in the array with the element provided.
+
+
