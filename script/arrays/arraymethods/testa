@@ -1,2 +1,5 @@
 x=["pen","pencil","book","eraser","scale","bag","book","desk","chair","table"]
 console.log(x)
+
+x.push("inkpen")
+console.log(x) // adds th element at the end of the array
