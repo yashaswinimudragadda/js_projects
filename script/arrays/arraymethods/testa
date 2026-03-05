@@ -117,3 +117,8 @@ const y=Array.from(s)
 console.log(y)
 console.log("==================")
 console.log(y[2])
+
+
+nestedArray=[1,[2,3],[4,[5,3]]]
+flattendarray=nestedArray.flat()
+console.log(flattendarray)
