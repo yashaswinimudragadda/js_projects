@@ -67,6 +67,10 @@ x=[2,3,4,5,6]
 y=x.map(myemp)
 console.log(y)
 
+const x=[47,11,42,13];
+const sum=x.reduce((p,q)=>(p+q))
+console.log(sum)
+
 x=[2,3,4,5,6]
 y=x.map(n=>n**2)
 console.log(y)  // using functions for the maping method
