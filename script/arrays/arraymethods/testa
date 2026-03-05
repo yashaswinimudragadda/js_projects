@@ -46,6 +46,9 @@ x=["pen","pencil","book","eraser","scale","bag","book","desk","chair","table"]
 
 console.log(x.at(2))  // fetches the element from the place where it elements are stored
 
+x=["pen","pencil","book","eraser","scale","bag","book","desk","chair","table"]
+console.log(x.slice(1,3))// print the elements between 1 and 3
+
 
 
 
