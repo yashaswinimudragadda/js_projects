@@ -137,3 +137,9 @@ console.log(typeof number)
 arrayString=number.toString();
 console.log(arrayString)
 console.log(typeof arrayString)
+
+
+
+const number =[2,4,6,8,10,3,6]
+const firstIndex=number.indexOf(3)
+console.log(firstIndex)
