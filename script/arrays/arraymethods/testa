@@ -147,3 +147,12 @@ console.log(firstIndex)
 const number = [2, 4, 6, 8, 10, 3, 6];
 const lastIndex = number.lastIndexOf(3);
 console.log(lastIndex); // Output: 5
+
+
+ const fruits = new Map([
+    ["apple",100],
+    ["banana",200],
+    ["orange",300]
+    ]);
+    console.log(fruits);
+    
