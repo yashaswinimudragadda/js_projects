@@ -55,5 +55,9 @@ const y=x.findIndex(n=>n%2===0)//findindex is used to find the index of the elem
 console.log(y)
 
 
+const x=[1,4,11,10,5]
+const y=x.filter(n=>n%2===0)//filter is used to add the filters
+console.log(y)
+
 
 
