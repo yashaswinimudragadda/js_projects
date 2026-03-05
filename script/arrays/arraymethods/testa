@@ -103,6 +103,15 @@ console.log([...z])
 const s = "hello"
 console.log(s)
 console.log(s[2])
+
+const x=[2,3,4,6,8]
+console.log(x)
+console.log("=============")
+const y=x.shift()
+console.log(y)
+console.log("=============")
+x.unshift(10);           // Adds 10 to the beginning
+console.log(x);
 console.log("===================")
 const y=Array.from(s)
 console.log(y)
