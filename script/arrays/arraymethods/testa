@@ -88,3 +88,13 @@ const x=[47,11,42,13];
 const y=x.splice(1,2)
 console.log(y)
 
+
+
+
+const n=["pen","book","eraser","scale","bag"]
+const x=n.keys()
+const y=n.values()
+const z=n.entries()
+console.log([...x])
+console.log([...y])
+console.log([...z])
