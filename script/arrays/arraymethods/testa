@@ -98,3 +98,13 @@ const z=n.entries()
 console.log([...x])
 console.log([...y])
 console.log([...z])
+
+
+const s = "hello"
+console.log(s)
+console.log(s[2])
+console.log("===================")
+const y=Array.from(s)
+console.log(y)
+console.log("==================")
+console.log(y[2])
