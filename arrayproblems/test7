@@ -1,0 +1,11 @@
+//find the smallest number in array
+ function smallestnum(arr){
+     let small=arr[0];
+     for(let i=0;i<arr.length;i++){
+         if(arr[i]<small){
+             small=arr[i];
+         }
+     }
+     return small;
+ }
+ console.log(smallestnum([1,2,3,1,-1]));
