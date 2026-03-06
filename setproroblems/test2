@@ -1,0 +1,4 @@
+let numbers=new Set([1,2,3,4]);
+
+numbers.delete(3);
+console.log(numbers);
