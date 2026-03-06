@@ -13,3 +13,8 @@ while(n!=0){
  console.log(s," this is the reverse number of given number")
 
 
+num="100"
+rev=num.split("").reverse().join("");
+console.log(rev)
+
+
