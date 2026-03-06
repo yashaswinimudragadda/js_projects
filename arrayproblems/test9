@@ -1,0 +1,7 @@
+// remove duplicate values from the array
+
+function Revdup(arr){
+   return[...new Set(arr)];
+}
+console.log([1,2,3,4,5,1,2,3]);
+console.log(Revdup([1,2,3,4,5,1,2,3,]));
