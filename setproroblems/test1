@@ -1,0 +1,4 @@
+let numbers = new Set([10, 20, 30, 40]);
+
+console.log(numbers.has(20));
+console.log(numbers.has(50));
