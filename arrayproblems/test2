@@ -1,0 +1,9 @@
+function findLargest(arr){
+    let count=0;
+    for(let i=1;i<=arr.length;i++){
+        count++;
+    }
+    
+    return count;
+}
+console.log(findLargest([10,5,8,20,3]));
