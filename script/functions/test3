@@ -1,0 +1,4 @@
+function greet(){
+    return "welcome to the world of js functions"
+}
+console.log(greet()) // with return type
