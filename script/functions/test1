@@ -1,0 +1,9 @@
+function forlist(){
+    console.log("apple")
+    console.log("orange")
+    console.log("banana")
+    console.log("manago")
+    console.log("pine apple")
+}
+ forlist();
+ forlist();
