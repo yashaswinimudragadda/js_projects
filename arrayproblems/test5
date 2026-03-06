@@ -1,0 +1,11 @@
+//check if a number exist in array
+
+function checknumber(arr, num){
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]==num){
+            return "number found!";
+        }
+    }
+     return "number not found";
+}
+console.log(checknumber([1,5,7,8,9],7));
