@@ -1,0 +1,8 @@
+// calculating area of the rectanagle with argments and without return type
+function rectangle(l,b){
+    L=l
+    B=b
+    area=L*B
+    console.log("the area of the rectangle is ",area)
+}
+rectangle(20,10)
