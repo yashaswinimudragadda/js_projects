@@ -1,0 +1,8 @@
+// calculating area of the rectangle 
+ function RecA(){
+     l=10
+     b=10
+     A=l*b
+     console.log("area of the rectangle= ",A)
+ }
+ RecA()
