@@ -1,0 +1,13 @@
+//sum of the digits in the number
+// with  arguments and withut return typw
+function sum(x){
+    n=x
+    c=0
+    while(n>0){
+        n=Math.floor(n/10)
+        c=c+1
+    }
+    console.log("the  count of the digit  in a numbe is: ",c)
+}
+x=parseInt(prompt("enter the x value: "))
+sum(x);
