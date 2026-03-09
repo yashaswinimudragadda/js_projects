@@ -1,0 +1,26 @@
+// checking the armstrong number
+// with out arguments and witout returns
+function armstrong() {
+    n=parseInt(prompt("enter the value here "))
+    if(n>0){
+        t=n
+        r=0
+        sum=0
+        while(n>0){
+            r=n%10
+            sum=sum+r**3
+            n=Math.floor(n/10)
+        }
+        console.log("the given number is ",t)
+        if(t==sum){
+            console.log("the given number is armstrong number.")
+        }
+        else{
+            console.log("the given number is not a armstrong number.")
+        }
+    }
+    else{
+        console.log("error:try again.")
+    }
+}
+armstrong()
