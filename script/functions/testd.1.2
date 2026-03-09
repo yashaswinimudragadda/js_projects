@@ -1,0 +1,27 @@
+//checking the given number is parlindrome or not
+// with arguments and without return 
+function parlindrome(x){
+    n=x;
+    t=n
+    sum=0
+    r=0
+    while(n>0){
+        r=n%10
+        sum=sum*10+r
+        n=Math.floor(n/10)
+    }
+    console.log("the given number is ",t)
+    if(t==sum){
+        console.log("the given number is a parlindrome.")
+    }
+    else{
+        console.log("the given number is not a parlindrome.")
+    }
+}
+x= parseInt(prompt("enter the number here "))
+if(x>0){
+    parlindrome(x)
+}
+else{
+    console.log("error:try again.")
+}
