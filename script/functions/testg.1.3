@@ -1,0 +1,22 @@
+//calculating fabnociss series with arg without return
+function fab(x){
+    n=x
+    a=0
+    b=1
+    i=0
+    while(i<=n){
+        console.log(a)
+        c=a+b
+        a=b
+        b=c
+        i++
+    }
+    
+}
+x=parseInt(prompt("enter the value here"))
+if(x>0){
+    fab(x)
+}
+else{
+    console.log("error:try again")
+}
