@@ -1,0 +1,19 @@
+//calculating the factorial with arguments and without return
+function factorial(x){
+    n=x
+    i=1
+    fac=1
+    while(i<=n){
+        fac=fac*i
+        i++
+    }
+    console.log("the given number is ",n)
+    console.log("the factorial of the ",n," is ",fac)
+}
+x=parseInt(prompt("enter the value here "))
+if(x>0){
+    factorial(x)
+}
+else{
+    console.log("error:try again")
+}
