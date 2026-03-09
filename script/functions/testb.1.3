@@ -1,0 +1,20 @@
+//calculating the sum of digits with arguments and with return 
+
+function sum(x){
+    n=x
+    sum=0
+    r=0
+    while(n>0){
+        r=n%10
+        sum=sum+r
+        n=Math.floor(n/10)
+    }
+    return sum;
+}
+x=parseInt(prompt("enter the value here "))
+ if( x>0){
+     console.log("the sum of the digits in the given numbers is ",sum(x))
+ }
+ else{
+     console.log("enter the valid number.")
+ }
