@@ -1,0 +1,26 @@
+//cyclic number with argument and with return
+function cyclic(x){
+    n=x
+        l=Math.floor(n%10)
+        while(n>0){
+            f=n%10
+            n=Math.floor(n/10)
+        }
+        console.log("the given number's last digit is  ",l)
+        console.log("the given number's first digit is ",f)
+         if(l==f){
+             return "the given number is cylic number."
+         }
+         else{
+             return "the given number is not cyclic number."
+         }
+    
+}
+x=parseInt(prompt("enter the value here "))
+if(x>0){
+    console.log(cyclic(x))
+}
+    else{
+        console.log("error:try again")
+    }
+    
