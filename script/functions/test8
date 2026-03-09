@@ -1,0 +1,12 @@
+// calulating rectangle area with arguments and with return type
+
+function Rectangle(x,y){
+    l=x;
+    b=y;
+    area=l*b;
+    return area
+}
+x= parseInt(prompt("enter the x value: "))
+y=parseInt(prompt("enter the y value: "))
+console.log("the area of the reactangle is ",Rectangle(x,y))
+
