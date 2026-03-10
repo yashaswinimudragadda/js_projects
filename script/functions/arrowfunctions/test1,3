@@ -1,3 +1,18 @@
+
+
+
+
+//calculating the si with argumetns and without return 
+
+si=(p=100,r=2,t=1)=>{
+    console.log("the simple interset is "+((p*r*t)/100))
+}
+si()
+
+
+
+
+
 //calculating the simple instrest without arguments and without return
 
 si=()=>{
