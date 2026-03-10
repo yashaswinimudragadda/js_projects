@@ -1,0 +1,32 @@
+function prime(x){
+    n=x
+    result=[]
+    for(i=2;i<=n;i++)
+    {
+    isprime=true
+    for(j=2;j<=Math.sqrt(i);j++)
+    {
+    if(i%j === 0)
+    {
+        isprime=false
+        break
+    }
+    }
+    if(isprime)
+    {
+        result.push(i+" is a prime number.")
+    }
+    else
+    {
+        result.push(i+" is not a prime number.")
+    }
+}
+return result;
+}
+x=parseInt(prompt("enter the value here "))
+if(x>=2){
+    console.log(prime(x))
+}
+else{
+    console.log("error:try again.")
+}
