@@ -1,0 +1,13 @@
+// factorial
+//with out argument and with out return
+factorial=()=>{
+    n=5
+    i=1
+    fac=1
+    while(i<=n){
+        fac=fac*i
+        i++
+    }
+    console.log("the factorial of the given number is "+fac)
+}
+factorial()
