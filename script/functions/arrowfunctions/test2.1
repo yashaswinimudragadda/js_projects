@@ -1,4 +1,19 @@
-
+fab=()=>{
+    a=0
+    b=1
+    n=5
+    fab=[]
+    i=0
+    while(i<n){
+        fab.push(a)
+        c=a+b
+        a=b
+        b=c
+        i++
+    }
+    return fab
+}
+console.log("the the series is ",fab())
 //with argument with out return
  fab=(n=5)=>{
      i=0
