@@ -1,4 +1,15 @@
+// with arguments and with return
 
+factorial=(n=5)=>{
+    i=1
+    fac=1
+    while(n>=i){
+        fac=fac*i
+        i++
+    }
+    return fac
+}
+console.log("the factorial of the given number is "+factorial())
 
 //the factorial with out arguments and with return 
 factorial=()=>{
