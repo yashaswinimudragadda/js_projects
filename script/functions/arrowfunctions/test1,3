@@ -1,6 +1,20 @@
 
 
 
+//calculate the simple interset with out arguments with return
+
+si=()=>{
+    p=100
+    r=2
+    t=1
+    si = (p*t*r)/100
+    return si
+}
+console.log("the simple interset is "+si())
+
+
+
+
 
 //calculating the si with argumetns and without return 
 
