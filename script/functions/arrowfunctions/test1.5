@@ -1,3 +1,19 @@
+//sum of digits with arguments and without return
+
+sum=(n=153)=>{
+    r=0
+    sum=0
+    while(n>0){
+        r=n%10
+        sum=sum+r
+        n=Math.floor(n/10)
+    }
+    console.log("the sum of the digits "+sum)
+}
+sum()
+
+
+
 // sum of the digits without arguments and with out retrun
 
 sum=()=>{
