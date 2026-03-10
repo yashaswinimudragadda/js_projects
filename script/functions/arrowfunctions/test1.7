@@ -2,6 +2,26 @@
 
 
 
+
+
+// with arguments and without return
+
+parlindrome=(n=151)=>{
+    r=0
+    t=n
+    sum=0
+    while(n>0){
+        r=n%10
+        sum=sum*10+r
+        n=Math.floor(n/10)
+    }
+    result=(t==sum)?"the given number is parlindrome":"the given number is not a parlindrome"
+    console.log(result)
+}
+parlindrome()
+
+
+
 // with arguments and without return
 
 parlindrome=(n=151)=>{
