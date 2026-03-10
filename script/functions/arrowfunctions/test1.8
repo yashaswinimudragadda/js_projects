@@ -1,0 +1,14 @@
+// cyclic number
+
+cyclic=()=>{
+    n=121
+    l=n%10
+    f=0
+    while(n>0){
+        f=n%10
+        n=Math.floor(n/10)
+    }
+    result=(l==f)?"the given number is cyclic":"the given number is not cyclic"
+    console.log(result)
+}
+cyclic()
