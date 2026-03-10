@@ -1,3 +1,16 @@
+//calculating the digits counst with arguments and with return
+
+digits=(n=153)=>{
+    c=0
+    while(n>0){
+        n=Math.floor(n/10)
+        c++
+    }
+    return c
+}
+console.log("the digits in the numbers "+digits())
+
+
 //digits count with out arguments and with return
  digits=()=>{
      n=153
