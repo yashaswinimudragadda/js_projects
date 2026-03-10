@@ -1,0 +1,25 @@
+function prime() {
+    let n = parseInt(prompt("enter the value here "));
+    
+    if (n >= 2) {
+        for (let i = 2; i <= n; i++) {
+            let isPrime = true; // Use consistent camelCase here
+            
+            for (let j = 2; j <= Math.sqrt(i); j++) {
+                if (i % j === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) { // Matches the variable name above
+                console.log(i + " is a prime number.");
+            } else {
+                console.log(i + " is NOT a prime number.");
+            }
+        }
+    } else {
+        console.log("error: try again (enter 2 or higher).");
+    }
+}
+prime();
