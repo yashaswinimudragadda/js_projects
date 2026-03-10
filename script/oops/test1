@@ -1,0 +1,8 @@
+class IceCream
+{
+    melt=()=>{
+        console.log("melts at room temperature")
+    }
+}
+vanilla = new IceCream()
+vanilla.melt()
