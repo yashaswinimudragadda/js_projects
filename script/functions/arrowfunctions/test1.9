@@ -1,3 +1,20 @@
+//with argument and with return
+
+armstrong=(n=153)=>{
+    r=0
+    sum=0
+    t=n
+    while(n>0){
+        r=n%10
+        sum=sum+r**3
+        n=Math.floor(n/10)
+    }
+    result=(t===sum)?"the given number is armstrong":"the given number is not armstrong"
+    return result
+}
+console.log(armstrong())
+
+
 //with out arguments and with return type
 
 armstrong=()=>{
