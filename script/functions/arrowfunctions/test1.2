@@ -1,4 +1,21 @@
 //calculating the area of the circle and circumfarance of the circle
+//with arguments and with return
+
+carea=(r=10)=>{
+    area=Math.floor(Math.PI*r**2)
+    perimeter=Math.floor(2*Math.PI*r)
+    return{
+        area:area,
+        perimeter:perimeter
+    }
+}
+ result=carea()
+ console.log("the area of the circle  is "+result.area)
+ console.log("the circumfarance of the circle is "+result.perimeter)
+
+
+
+//calculating the area of the circle and circumfarance of the circle
 // with out arguments and with return 
 
 carea=()=>
