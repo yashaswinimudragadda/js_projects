@@ -1,0 +1,14 @@
+// reverse number with out arguments  with out return
+
+reverse=()=>{
+    n=153
+    r=0
+    sum=0
+    while(n>0){
+        r=n%10
+        sum=sum*10+r
+        n=Math.floor(n/10)
+    }
+    console.log("the reverse number is "+sum)
+}
+reverse()
