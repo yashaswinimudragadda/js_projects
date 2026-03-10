@@ -1,3 +1,20 @@
+//sum of the digits
+// with arguemtns with return
+
+sum=(n=153)=>{
+    sum=0
+    r=0
+    while(n>0){
+        r=n%10
+        sum=sum+r
+        n=Math.floor(n/10)
+    }
+    return sum
+}
+console.log("the sum of the digits "+sum())
+
+
+
 //calculateing the sum of the digits with out arguments with return 
 
 sum=()=>{
