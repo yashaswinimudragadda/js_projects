@@ -1,0 +1,86 @@
+class ExampleStatic {
+    // 1. Rectangle Logic
+    static Reactangle(l, b) {
+        let area = l * b;
+        let perimeter = 2 * (l + b);
+        console.log("The area of the rectangle is " + area);
+        console.log("The perimeter of the rectangle is " + perimeter);
+    }
+
+    // 2. Circle Logic
+    static circle(r) {
+        // Fixed Math.Math and .r typos
+        let area = Math.floor(Math.PI * r ** 2);
+        let circumference = Math.floor(Math.PI * 2 * r);
+        console.log("The area of the circle is " + area);
+        console.log("The circumference of the circle is " + circumference);
+    }
+
+    // 3. Simple Interest Logic
+    static simpleinterset(p, t, r) {
+        let si = (p * r * t) / 100;
+        console.log("The simple interest is: ", si);
+    }
+
+    // 4. Digit Sum & Count
+    static digitsum(n) {
+        let r = 0, sum = 0, c = 0;
+        let temp = n; // Use temp so we don't lose the original number
+        while (temp > 0) {
+            r = temp % 10;
+            sum = sum + r;
+            temp = Math.floor(temp / 10);
+            c++;
+        }
+        console.log(`Sum: ${sum}, Count: ${c}`);
+    }
+
+    // 5. Reverse Number
+    static reversenumber(n) {
+        let r = 0, sum = 0;
+        let temp = n;
+        while (temp > 0) {
+            r = temp % 10;
+            sum = sum * 10 + r;
+            temp = Math.floor(temp / 10);
+        }
+        console.log("The reverse number is: ", sum);
+    }
+}
+
+// --- MENU CONTROL ---
+console.log("Choose: 1:Rectangle, 2:Circle, 3:Interest, 4:DigitSum, 5:Reverse");
+let enter = parseInt(prompt("Enter your choice (1-5):"));
+
+switch (enter) {
+    case 1:
+        let l = parseInt(prompt("Enter length:"));
+        let b = parseInt(prompt("Enter breadth:"));
+        ExampleStatic.Reactangle(l, b);
+        break;
+
+    case 2:
+        let r = parseInt(prompt("Enter radius:"));
+        ExampleStatic.circle(r);
+        break;
+
+    case 3:
+        let p = parseInt(prompt("Enter Principal:"));
+        let t = parseInt(prompt("Enter Time:"));
+        let rate = parseInt(prompt("Enter Rate:"));
+        ExampleStatic.simpleinterset(p, t, rate);
+        break;
+
+    case 4:
+        let num1 = parseInt(prompt("Enter number for Digit Sum:"));
+        ExampleStatic.digitsum(num1);
+        break;
+
+    case 5:
+        let num2 = parseInt(prompt("Enter number to Reverse:"));
+        ExampleStatic.reversenumber(num2);
+        break;
+
+    default:
+        console.log("Invalid choice! Please enter a number between 1 and 5.");
+}
