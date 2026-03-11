@@ -1,0 +1,15 @@
+class mycalci{
+    constructor(a,b){
+        this.a=a
+        this.b=b
+    }
+    display=()=>{
+        console.log("value of a ",this.a," and the b ",this.b)
+    }
+    carea=()=>{
+        return this.a*this.b
+    }
+}
+r= new mycalci(10,20)
+r.display()
+console.log("the area of a rectangle is ",r.carea())
