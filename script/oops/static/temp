@@ -1,0 +1,2 @@
+static class methods are defined on the class itself.
+vote cannot call a static method on a object only on an objet class.
