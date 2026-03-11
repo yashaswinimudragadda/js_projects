@@ -1,0 +1,184 @@
+class rectanglearea{
+    constructor(a,b){
+        this.a=a
+        this.b=b
+    }
+    area=()=>{
+        return this.a*this.b
+    }
+    perimeter=()=>{
+        return (2*(this.a+this.b))
+    }
+}
+area=new rectanglearea(1,2)
+console.log("the area of the rectangle is ",area.area())
+console.log("the perimeter of the rectangle is ",area.perimeter())
+
+class circle
+{
+    constructor(r){
+        this.r=r
+    }
+    area=()=>{
+        return Math.floor(Math.PI*this.r**2)
+    }
+    circumfurance=()=>{
+        return Math.floor(Math.PI*2*this.r)
+    }
+}
+c= new circle(4)
+console.log("the area of the circle ",c.area(), " and the circumfurance of the circle is ",c.circumfurance())
+
+
+//sum fo the digits
+class sum {
+ constructor(n){
+     this.n=n
+     this.sum=0
+     this.c=0
+     this.r=0
+ }
+ digitsum=()=>{
+     while(this.n>0){
+         this.r= this.n % 10
+         this.sum += this.r
+         this.n = Math.floor(this.n/10)
+         this.c++
+     }
+     return {
+         sum:this.sum,
+         count:this.c
+     }
+ }
+    
+}
+s=new sum(153)
+result=s.digitsum()
+console.log("the sum of the digits and count of the digit of a number ",result.sum, "and ",result.count)
+
+//reverse number
+class reverse{
+    constructor(n){
+        this.n=n
+        this.t=this.n
+        this.r=0
+        this.sum=0
+    }
+    reverse=()=>{
+        while(this.n>0){
+        this.r=this.n%10
+        this.sum=(this.sum*10+this.r)
+        this.n=Math.floor(this.n/10)
+    }
+    return this.sum;
+    }
+}
+//createing the object
+rev=new reverse(153)
+console.log("the given number is 153  and the reverse nmber is ",rev.reverse())
+
+
+class parlindrome{
+    constructor(){
+        this.n=121
+        this.sum=0
+        this.r=0
+        this.t=(this.n)
+    }
+    parlindromechecker=()=>{
+        while(this.n>0){
+            this.r=(this.n%10)
+            this.sum=(this.sum*10+this.r)
+            this.n=(Math.floor(this.n/10))
+        }
+        const result = (this.t === this.sum) 
+            ? `The number ${this.t} is a palindrome` 
+            : `The number ${this.t} is not a palindrome.`;
+            
+        return result;
+    }
+}
+
+parlin=new parlindrome()
+console.log(parlin.parlindromechecker())
+
+
+class armstrong{
+    constructor(){
+        this.n=153
+        this.r=0
+        this.sum=0
+        this.t=this.n
+    }
+    armstrongchecker=()=>{
+        while(this.n>0){
+            this.r=this.n%10
+            this.sum=this.sum+this.r**3
+            this.n=Math.floor(this.n/10)
+        }
+        const result=(this.t===this.sum)?"the given number is armstrong.":"the given number is not armstrong."
+        return result
+    }
+}
+check=new armstrong()
+console.log(check.armstrongchecker())class Factorial {
+    constructor(n) {
+        this.n = n;      // Fixed: changed comma to dot
+        this.i = 1;
+        this.fac = 1;
+    }
+
+    factorialPrint = () => {
+        // Use <= to ensure we multiply by the number itself
+        while (this.i <= this.n) { 
+            this.fac = this.fac * this.i;
+            this.i++;
+        }
+        return this.fac;
+    }
+}
+
+const f = new Factorial(5);
+console.log("The factorial of the given number is:", f.factorialPrint()
+
+class fabnociss
+{
+    constructor(n){
+        this.n=n
+        this.i=2
+        this.f1=0
+        this.a=[0,1]
+    }
+     fabprint=()=>{
+         while(this.n>this.i){
+        let nextNum = this.a[this.i - 1] + this.a[this.i - 2];
+        this.a.push(nextNum)
+        this.i++
+         }
+         return this.a
+     }
+    
+}
+
+fab=new fabnociss(5)
+console.log(fab.fabprint())
+
+class cyclic{
+    constructor(n){
+        this.n=n
+        this.l=this.n%10
+        this.f=0
+    }
+checkcyclic=()=>{
+        while(this.n>0){
+            this.f=(this.n%10)
+            this.n=Math.floor(this.n/10)
+        }
+        const check = (this.l==this.f)?"the given number is cyclic number.":"the given number is not cyclic number."
+        return check
+    }
+}
+cyc=new cyclic(121)
+console.log(cyc.checkcyclic())
+
+
