@@ -1,0 +1,19 @@
+//inheritance
+//single inhertance
+class A
+{
+    area=(l,b)=>{
+        console.log(l*b)
+    }
+    
+}
+class B extends A
+{
+   perimeter=(l,b)=>{
+        console.log(2*(l+b))
+    } 
+}
+
+b=new B()
+console.log("the area of the reactangle is ",b.area(2,3))
+console.log("the perimenter of the rectangle is ",b.perimeter(2,3))
