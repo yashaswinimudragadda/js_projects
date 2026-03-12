@@ -1,0 +1,16 @@
+class A
+{
+    si=(p=100,r=1,t=2)=>{
+        console.log("the si of the given number is ",((p*t*r)/100))
+    }
+}
+class B extends A
+{
+    ci=(p=100,r=2,t=1)=>{
+        const amount = p * Math.pow((1 + r / 100), t);
+        console.log("the compound interset of the given number is ",amount)
+        }
+}
+b=new B()
+b.si()
+b.ci()
