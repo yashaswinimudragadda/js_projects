@@ -1,0 +1,44 @@
+class A
+{
+    parlindrome_number=(n=151)=>{
+        let r=0
+        let sum=0
+        let t=n
+        while(n>0){
+            r=n%10
+            sum=sum*10+r
+            n=Math.floor(n/10)
+        }
+        console.log("the parlindrome number checker")
+        
+         console.log("Original:", t);
+         console.log("Reversed:", sum);
+        const check = (t===sum)?"the given number is parlindrome":"the given number is not a parlindrome"
+        return check
+    }
+}
+class B extends A{
+  palindrome_String = (n = "100") => {
+    let t = n.trim(); // The original cleaned string
+    let rev = "";
+    
+    // Method 1: Using 'of' correctly
+    for (let char of t) {
+        rev = char + rev; // Puts each new character at the START
+    }
+
+    console.log("Original:", t);
+    console.log("Reversed:", rev);
+
+    // CRITICAL FIX: Compare the original (t) to the reversed (rev)
+    const check = (t === rev) 
+        ? "The given string is a palindrome" 
+        : "The given string is NOT a palindrome";
+        
+    return check;
+}
+}
+b=new B()
+console.log(b.parlindrome_number())
+console.log("=========================")
+console.log(b.palindrome_String())
