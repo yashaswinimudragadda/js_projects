@@ -1,0 +1,15 @@
+//singal inheritance
+class A{
+    carea=(r)=>{
+        console.log("the area of the circle is ",Math.floor(Math.PI*r**2))
+    }
+}
+class B extends A
+{
+    ccircumference=(r)=>{
+        console.log("the circumference of the circle is ",Math.floor(2*Math.PI*r))
+    }
+}
+b=new B()
+b.carea(1)
+b.ccircumference(1)
