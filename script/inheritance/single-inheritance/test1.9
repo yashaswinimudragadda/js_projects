@@ -1,0 +1,30 @@
+class A{
+    cyclic_number=(n=121)=>{
+        let l=n%10
+        let i=0
+        let r=0
+        while(n>i){
+            r=n%10
+            n=Math.floor(n/10)
+            i++
+        }
+        console.log("the cyclic number checker")
+        const  check=(l===r)?"the given number is cyclic":"the given number is not cyclic number."
+        console.log(check)
+    }
+}
+class B extends A
+{
+    fab_checker=(n=5)=>{
+        let fab=[0,1]
+        let i=2
+        while(n>i){
+            fab[i]=fab[i-1]+fab[i-2]
+            fab.push(i)
+            i++
+        }
+console.log("The Fibonacci series is: " + fab.join(", "));    }
+}
+b=new B()
+b.cyclic_number()
+b.fab_checker()
