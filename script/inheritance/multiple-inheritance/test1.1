@@ -1,0 +1,80 @@
+class A
+{
+    sum=(n)=>{
+        this.originalN=n
+        let temp=n
+        let sum=0
+        let r=0
+        let count=0
+        while(temp>0){
+            r=temp%10
+            sum=sum+r
+            count++
+            temp=Math.floor(temp/10)
+        }
+        console.log("the sum of the digits is "+sum)
+        this.countstored=count
+    }
+}
+class B extends A{
+    digits=()=>{
+        console.log("the digits count in the given value is "+this.countstored)
+    }
+}
+
+
+class C extends B
+{
+    reverse=()=>{
+        let temp =  this.originalN
+        let sum=0
+        while(temp>0){
+            let r=temp%10
+            sum=sum*10+r
+            temp=Math.floor(temp/10)
+        }
+        this.reversednumber=sum
+        console.log("the reverse number is "+sum)
+    }
+}
+
+class D extends C{
+    palindrome=()=>{
+        const check= ( this.originalN=== (this.reversednumber))?"the given number is palindrome. ":" the given number is not a palindrome."
+        console.log(check)
+    }
+}
+class E extends D{
+    cyclic=()=>{
+        let temp=this.originalN
+        let l=temp%10
+        let f=0
+        while(temp>0){
+            f=temp%10
+            temp=Math.floor(temp/10)
+        }
+        const check = (l===f)?"the given number is cyclic ":"the given number is not cyclic."
+        console.log(check)
+    }
+}
+class F extends E{
+    armstrong=()=>{
+        let temp=this.originalN
+        let sum=0
+        while(temp>0){
+            let r=temp%10
+            sum=sum+(r**3)
+            temp=Math.floor(temp/10)
+        }
+        const check= (this.originalN===sum)?"the given number is armstrong.":"the given number is not armstrong."
+        console.log(check)
+    }
+}
+// Execution
+const obj = new F();
+obj.sum(153);    // Output: The sum of the digits is 6
+obj.digits();
+obj.reverse();
+obj.palindrome();
+obj.cyclic();
+obj. armstrong();
