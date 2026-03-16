@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>practice change color using mouseover</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <h1 id ="text">since you are aiming to become a frontend developer, mastering dome+events will help you a lot 
+            before working deeply with react/next.js</h1>
+            <button onclick="changecolor()">color check</button>
+            <script>
+                let changed = false                
+                changecolor=()=>{
+                    if(changed===false){
+                    document.getElementById("text").style.color="white";
+                    document.getElementById("text").style.backgroundColor="green";
+                    document.getElementsByTagName("body")[0].style.backgroundColor="yellow";
+                    changed=true;
+
+                    }
+                    else{
+                        document.getElementById("text").style.color="black";
+                        document.getElementById("text").style.backgroundColor="transparent";
+                        document.body.style.backgroundColor="white";
+                        changed=false;
+                    }
+                }
+            </script>
+    </body>
+</html>
