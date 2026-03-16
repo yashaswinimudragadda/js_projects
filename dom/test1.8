@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>input/forms events</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initialscale=1.0">
+    </head>
+    <input type="text" id="name" oninput="showText()"placeholder="enteryour n value">
+    <p id="output"></p>
+    <script>
+        showText=()=>{
+            let value = document.getElementById("name").value;
+            document.getElementById("output").innerText=value;
+        }
+    </script>
+</html>
