@@ -7,6 +7,22 @@
     </head>
     <body>
         <script>
+            window.onresize = function(){
+                console.log("window resized");
+            }
+        </script>
+    </body>
+</html>
+===============================================================================
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>window load event</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,inital-scale=1.0">
+    </head>
+    <body>
+        <script>
             window.onload=function(){
                 alert("page loaded succesfully!");
             }
