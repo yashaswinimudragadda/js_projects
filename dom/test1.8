@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>input length validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <input type="password" id="password" oninput="checklenght()">
+        <p id="msg"></p>
+        <script>
+            checklenght=()=>{
+                let pass=document.getElementById("password").value;
+
+                if(pass.length<6){
+                    document.getElementById("msg").innerText="password too short";
+                }
+                else{
+                    document.getElementById("msg").innerText="password valid";
+                }
+            }
+        </script>
+    </body>
+</html>
+===============================================================================
+<!DOCTYPE html>
+<html lang="en">
+    <head>
         <title>from submit event</title>
         <meta charset="UTF-8">
         <meta name="view-port" content="width=device-width,initial-scale=1.0">
