@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>live character counter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,inital-scale=1.0">
+    </head>
+    <body>
+        <textarea id="text" oninput="countChar()"></textarea>
+        <p id="count"></p>
+        <script>
+            countChar=()=>{
+                let len=document.getElementById("text").value.length;
+                document.getElementById("count").innerText=len+" characters";
+            }
+        </script>
+    </body>
+</html>
+=================================================================================
+<!DOCTYPE html>
+<html lang="en">
+    <head>
         <title>input length validation</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
