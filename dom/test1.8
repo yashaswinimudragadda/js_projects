@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>from submit event</title>
+        <meta charset="UTF-8">
+        <meta name="view-port" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <form onsubmit="submitForm(event)">
+            <input type="text" id="username" placeholder="enter name" >
+            <button type="sumbit">submit</button>
+        </form>
+        <p id="result"></p>
+        <script>
+            submitForm=(event)=>{
+                event.preventDefault();
+                let name=document.getElementById("username").value;
+                document.getElementById("result").innerText="hello"+name;
+            }
+        </script>
+
+    </body>
+</html>
+=================================================================================
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>change input background (focus event)</title>
 <meta charset="UTF-8">
