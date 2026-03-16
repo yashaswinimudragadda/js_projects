@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>button changes text.</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,inital-scale=1.0">
+    </head>
+    <body>
+        <h1 id="text">helloworld</h1>
+        <button ondblclick="changetext()">click</button>
+        <script>
+             changetext=()=>{
+                document.getElementById("text").innerText="this is java script demo!";
+            };
+        </script>
+
+        <h1 id="count">0</h1>
+        <button onclick="inc()">+</button>
+        <button onclick="dec()">-</button>
+        <script>
+            let count=0;
+            inc=()=>{
+                count++;
+                document.getElementById("count").innerText=count;
+            }
+            dec=()=>{
+                count--;
+                document.getElementById("count").innerText=count;
+            }
+        </script>
+    </body>
+</html>
