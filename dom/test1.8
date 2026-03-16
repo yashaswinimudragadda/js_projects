@@ -1,5 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<title>change input background (focus event)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body>
+
+<input type="text" id="box"
+oninput="showText()"
+onfocus="focusBox()"
+onblur="blurBox()"
+placeholder="enter your name here">
+
+<p id="output"></p>
+
+<script>
+
+focusBox = () => {
+    document.getElementById("box").style.backgroundColor = "lightblue";
+}
+
+blurBox = () => {
+    document.getElementById("box").style.backgroundColor = "white";
+}
+
+showText = () => {
+    let value = document.getElementById("box").value;
+    document.getElementById("output").innerText = value;
+}
+
+</script>
+
+</body>
+</html>
+=======================================================================================
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>input/forms events</title>
         <meta charset="UTF-8">
