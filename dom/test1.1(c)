@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>cls3-demo</title>
+      <style>
+body {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Background layer */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("https://images.pexels.com/photos/36319393/pexels-photo-36319393.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.7;   /* ✅ only image becomes light */
+    z-index: -1;
+}
+
+/* Your form */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+
+    color: white;
+    font-weight: bold;
+}
+</style>
+    </head>
+    <body>
+        <form class="container">
+            <table >
+            <caption>Marks and Grade Calculator</caption>
+            <tr>
+                <td><label for="sname"><strong>Student name:</strong></label></td>
+                <td><input  style="width: 290px;" type="text" id="sname" placeholder="enter Student Name" required></td>
+            </tr>
+            <tr>
+                <td><label for="sno"><strong>Student number:</strong></label></td>
+                <td><input style="width: 290px;" type="text" id="sno" placeholder="Enter Student number" required></td>
+            </tr>
+            <tr>
+                <td> <label for="sclass">Class:</label></td>
+                <td><input style="width: 290px;" type="text" id="sclass" placeholder="Enter class" required></td>
+            </tr>
+             <tr>
+                <td>  <label for="section">Section:</label></td>
+                <td><input style="width: 290px;" type="text" id="section" placeholder="Enter section" required></td>
+            </tr>
+             <!-- Marks -->
+        <tr><td>Mark 1:</td><td ><input  style="width: 290px;" type="number" id="mark1" min="15" max="30"  placeholder="enter marks value here above 15 out of 30"></td></tr>
+        <tr><td>Mark 2:</td><td ><input  style="width: 290px;" type="number" id="mark2" min="15" max="30"  placeholder="enter marks value here above 15 out of 30"></td></tr>
+        <tr><td>Mark 3:</td><td ><input  style="width: 290px;" type="number" id="mark3" min="15" max="30"  placeholder="enter marks value here above 15 out of 30"></td></tr>
+        <tr><td>Mark 4:</td><td ><input  style="width: 290px;" type="number" id="mark4" min="15" max="30" placeholder="enter marks value here above 15 out of 30" required></td></tr>
+        <tr><td>Mark 5:</td><td ><input  style="width: 290px;" type="number" id="mark5" min="15" max="30"  placeholder="enter marks value here above 15 out of 30"></td></tr>
+        <tr><td>Mark 6:</td><td ><input  style="width: 290px;" type="number" id="mark6" min="15" max="30"  placeholder="enter marks value here above 15 out of 30"></td></tr>
+
+            <tr>
+            <td>Gender:</td>
+            <td>
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="general"> General
+            </td>
+        </tr>
+            <tr>
+                <td>behavior:</td>
+            <td>
+                <input type="checkbox"  value="helpful" name="behavior">helping nature
+                <input type="checkbox" value="Maturity" name="behavior">mature
+                <input type="checkbox" value="humble" name="behavior">Humble
+             
+            </td>
+            </tr>
+         
+            </table>
+    <div>
+        <button type="button" id="calculateBtn">Calculate</button>
+        <button type="reset">Reset</button>
+    </div>
+        </form>
+    <div id="result"></div>
+    </body>
+   <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+        const btn = document.getElementById("calculateBtn");
+        
+
+        btn.addEventListener("click",()=>{
+            //get marks
+            let m1=Number(document.getElementById("mark1").value)||0;
+            let m2=Number(document.getElementById("mark2").value)||0;
+            let m3=Number(document.getElementById("mark3").value)||0;
+            let m4=Number(document.getElementById("mark4").value)||0;
+            let m5=Number(document.getElementById("mark5").value)||0;
+            let m6=Number(document.getElementById("mark6").value)||0;
+
+            //calculate total
+            let total = m1+m2+m3+m4+m5+m6;
+
+            //calculate percentage
+
+            let percentage=total/6;
+
+            //grade logic
+
+            let grade="";
+             if(percentage>=90) grade="A+";
+             else if(percentage>=75) grade="A";
+             else if(percentage>=60) grade="B";
+             else if (percentage >= 50) grade = "C";
+             else grade="fail";
+
+             // gender
+
+             let gender = document.querySelector('input[name="gender"]:checked');
+
+             if(gender){
+                gender=gender.value;
+             }
+             else{
+                gender = "not Selected";
+             }
+             //behavior
+
+             let behavior=document.querySelectorAll('input[name="behavior"]:checked');
+             let behaviorList = [];
+             behavior.forEach((item)=>{
+                behaviorList.push(item.value);
+             });
+             let finalBehavior = behaviorList.length>0?behaviorList.join(", "):"none";
+
+
+             //display result
+document.getElementById("result").innerHTML = `
+<div style="margin-top:20px;">
+    <h2 style="text-align:center;">Student Details Of Class ${document.getElementById("sclass").value}</h2>
+    <table border="1" border-color="white" cellpadding="8" cellspacing="0" style="border-collapse:collapse; width:100%; max-width:500px; margin:auto;">
+        <tr>
+            <th>Field</th>
+            <th>Details</th>
+        </tr>
+        
+        <tr>
+            <td>Name</td>
+            <td>${document.getElementById("sname").value}</td>
+        </tr>
+        <tr>
+            <td>Roll Number</td>
+            <td>${document.getElementById("sno").value}</td>
+        </tr>
+        <tr>
+            <td>Section</td>
+            <td>${document.getElementById("section").value}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>${gender}</td>
+        </tr>
+        <tr>
+            <td>Behavior</td>
+            <td>${finalBehavior}</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>${total}</td>
+        </tr>
+        <tr>
+            <td>Percentage</td>
+            <td>${percentage.toFixed(2)}%</td>
+        </tr>
+        <tr>
+            <td>Grade</td>
+            <td><strong>${grade}</strong></td>
+        </tr>
+    </table>
+</div>
+`;
+
+
+        });
+
+    });
+   </script>
+</html>
