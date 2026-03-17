@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,inital-scale=1.0">
+        <title>cls-dom-1</title>
+    </head>
+    <body>
+        <p id="ps1">see the magic here</p>
+        <button id="btn">click me</button>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            document.getElementById('btn').addEventListener('click',()=>{
+                document.getElementById('ps1').innerText='magic happened!';
+            });
+        });
+    </script>
+</html>
