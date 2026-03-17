@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,inital-scale=1.0">
+        <title>cls2-demo</title>
+    </head>
+    <body>
+        <p id="p1">see the magic here</p>
+        <button id="btn"> click me</button>
+    </body>
+    <script>
+  
+document.addEventListener("DOMContentLoaded", () => {
+    let changed = false;
+
+    const nbtn = document.querySelector("#btn");
+    const np1 = document.querySelector("#p1");
+
+    nbtn.addEventListener("click", () => {
+        if (changed === false) {
+            np1.style.color = "red";
+            np1.style.backgroundColor = "yellow";
+            np1.style.fontSize = "4rem";
+            np1.innerText = "you clicked button";
+            changed = true;
+        } else {
+            np1.style.color = "black";
+            np1.style.backgroundColor = "transparent";
+            np1.style.fontSize = "1rem";
+            np1.innerText = "see the magic here";
+            changed = false;
+        }
+    });
+});
+</script>
+
+</html>
