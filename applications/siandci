@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <title>simpleintesert and compound intesert </title> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+        <style>
+            body{
+                font-family:   Arial, sans-serif;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: bisque;   
+            }
+            form{
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1) ;
+                width:400px;
+            }
+
+            table{
+                width:100%;
+            }
+            caption{
+                font-weight: bold;
+                font-size:1.2rem;
+                margin-bottom: 15px;
+                color:#333;
+            }
+            td{
+                padding: 8px 0;
+            }
+            input,select{
+                width:100%;
+                padding:8px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            button{
+                margin-top: 15px;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            #submit{
+                background-color: #28a745;
+                color:white;
+                width:68%;
+            }
+            #result{
+                color:#007bff;
+                margin:10px 0 0 0;
+            }
+            .title{
+                color:#007bff;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>     
+    </head>
+    <body>
+        <h1 class="title">Simple intesert and Compound intesert</h1>
+        <form> 
+            <table>
+             <caption> form to calculate inteserts</caption>   
+            <tr>
+                <td>
+                    select you option here
+                </td>
+                <td>
+                <select name="otp" id="otp-select">
+                <option value="si">Simple intesert</option>
+                <option value="ci">Compound intesert</option>
+                </select>
+                </td>
+            </tr>
+                <tr>
+                <td><label for="p">pricipal:</label></td>
+                <td><input   id="p" name="pricipal" type="number" required style="width: 300px;"></td>
+                </tr>
+                
+                <tr>
+                <td><label for="t">time:</label></td>
+                <td><input  id="t" name="time" type="number" required style="width: 300px;"></td>
+                </tr>
+                
+                <tr>
+                <td><label for="r">rate:</label></td>
+                <td><input  id="r" name="rate" type="number" required style="width: 300px;"></td>
+                </tr>
+                <tr>
+                    <td>Result:</td>
+                    <td><h3 id="result"></h3></td>
+                </tr>
+            </table>
+            <button type="submit" id="submit">Click here</button>
+            <button type="reset" id="reset">Reset</button>
+        </form>
+    </body>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+                const btn1=document.getElementById("submit");
+                const resultdiv= document.getElementById("result");
+                const form = document.querySelector("form");
+
+                btn1.addEventListener("click",(e)=>{
+                    e.preventDefault();
+                    // get values
+
+                    let p=Number(document.getElementById("p").value)||0;
+                    let r=Number(document.getElementById("r").value)||0;
+                    let t=Number(document.getElementById("t").value)||0;
+                    let type = document.getElementById("otp-select").value;
+
+                    let finalAmount=0;
+                    
+                    if(type==="si"){
+                        //calculate the si
+                        finalAmount = Math.floor((p*t*r)/100);
+                        resultdiv.innerHTML="simple interest: "+finalAmount; 
+                    }
+                    else{
+                        //calculate the ci
+                        finalAmount=Math.floor(p*Math.pow((1+r/100),t)-p);
+                        resultdiv.innerHTML="Compount interest: "+finalAmount;
+                    }
+                });
+                form.addEventListener('reset',()=>{
+                    resultdiv.innerHTML="";
+                });
+
+            });
+        </script> 
+ </html>
