@@ -1,0 +1,164 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <title>simpleintesert and compound intesert </title> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+        <style>
+            body{
+                font-family:   Arial, sans-serif;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: bisque;   
+            }
+            form{
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1) ;
+                width:400px;
+            }
+
+            table{
+                width:100%;
+            }
+            caption{
+                font-weight: bold;
+                font-size:1.2rem;
+                margin-bottom: 15px;
+                color:#333;
+            }
+            td{
+                padding: 8px 0;
+            }
+            input,select{
+                width:100%;
+                padding:8px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            button{
+                margin-top: 15px;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            #submit{
+                background-color: #28a745;
+                color:white;
+                width:68%;
+            }
+            #result{
+                color:#007bff;
+                margin:10px 0 0 0;
+            }
+            .title{
+                color:#007bff;
+                align-items: center;
+                justify-content: center;
+                font-size: clamp(1rem, 2.5vw, 2rem);
+                text-align: center;
+            }
+            
+        </style>     
+    </head>
+    <body>
+        <h1 class="title">Check your numbers</h1>
+        <form> 
+            <table>
+             <caption> form to check Numbers</caption>   
+            <tr>
+                <td>
+                    select you option here
+                </td>
+                <td>
+                <select name="otp" id="otp-select">
+                <option value="arm">Armstrong</option>
+                <option value="cylco">Cyclco Number</option>
+                <option value="palan">Palandrome</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>N value:</td>
+                <td><input type="number" id="n" required></td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td><span id="result"></span></td>
+            </tr>
+            
+
+                            
+        </table>
+            <button type="submit" id="submit">Click here</button>
+            <button type="reset" id="reset">Reset</button>
+        </form>
+    </body>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+                const btn1=document.getElementById("submit");
+                const resultdiv= document.getElementById("result");
+                const form = document.querySelector("form");
+
+                btn1.addEventListener("click",(e)=>{
+                    e.preventDefault();
+
+                 let n=Number(document.getElementById("n").value)||153;
+                 let type = document.getElementById("otp-select").value;
+
+
+                 let sum=0;
+                 let r=0;
+
+                if("arm"===type){
+                    let temp=n;
+                    while(n>0){
+                        r=n%10;
+                        sum=sum+(r**3);
+                        n=Math.floor(n/10);
+                    }
+                    const check1=(temp===sum)?"The given number is Armstrong number.":"The given number is not Armstrong number.";
+                    resultdiv.innerHTML=check1;
+                }
+                else if("cylco"===type){
+                    let l=n%10;
+                    let i=0;
+                    while(n>i){
+                        f=n%10;
+                        n=Math.floor(n/10);
+                        i++;
+                    }
+                    
+                    const check2=(f===l)?"The given number is Cyclo number.":"The given number is not Cyclo number.";
+                    resultdiv.innerHTML=check2;
+                }
+                else if("palan"===type)
+                {
+                    let temp=n;
+                    while(n>0){
+                        r=n%10;
+                        sum=sum*10+r;
+                        n=Math.floor(n/10);
+                    }
+                    const check3=(temp===sum)?"The given number is Palandrome number.":"The given number is not Palandrome number.";
+                    resultdiv.innerHTML=check3;
+
+                }
+            });
+
+                
+                form.addEventListener('reset',()=>{
+                    resultdiv.innerHTML="";
+                });
+
+            });
+        </script> 
+ </html>
