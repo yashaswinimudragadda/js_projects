@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>food</title>
+        <meta charset="utf-8">
+        <style>
+            .container{
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap:20px;
+                padding: 50px;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <form>
+            <label>food1</label>
+            <input type="checkbox" name="food" value="1"><br>
+            
+            <label>food2</label>
+            <input type="checkbox" name="food" value="2"><br>
+        </form>
+        <div class="result"><textarea id="out"></textarea></div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const checkboxes=document.querySelectorAll("input[name='food']");
+            const resultout=document.getElementById("out");
+            checkboxes.forEach(checkbox=>{
+                checkbox.addEventListener("change",()=>{
+                    const selected = [...checkboxes]// array
+                                    .filter(i=>i.checked)
+                                    .map(i=>i.value);
+                    if(selected.length>0){
+                        resultout.value="the numbers are "+selected.join(", ");
+                    } else{
+                        resultout.value="";
+                    }               
+                });
+            });
+        });
+    </script>
+</html>

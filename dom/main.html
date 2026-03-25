@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Coffee Selection</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            font-weight: bold;
+        }
+        .result-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #output {
+            width: 300px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form class="container">
+        <table>
+            <caption><strong>Check the ingredients you want with coffee</strong></caption>
+            <tr>
+                <td><label for="sugarcheck">Sugar</label></td>
+                <td><input type="checkbox" id="sugarcheck" name="chk" value="Sugar"></td>
+            </tr>
+            <tr>
+                <td><label for="creamcheck">Cream</label></td>
+                <td><input type="checkbox" id="creamcheck" name="chk" value="Cream"></td>
+            </tr>
+            <tr>
+                <td><label for="milkcheck">Milk</label></td>
+                <td><input type="checkbox" id="milkcheck" name="chk" value="Milk"></td>
+            </tr>
+        </table>
+    </form>
+
+    <div class="result-wrapper">
+        <input type="text" id="output" placeholder="Your selection will display here" readonly>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Select all checkboxes with name="chk"
+            const checkboxes = document.querySelectorAll('input[name="chk"]');
+            const outputField = document.getElementById("output");
+
+            checkboxes.forEach(checkbox => {
+                // Listen for any check/uncheck action
+                checkbox.addEventListener("change", () => {
+                    // Filter the checkboxes to find only the checked ones
+                    const selected = Array.from(checkboxes)
+                        .filter(i => i.checked)
+                        .map(i => i.value);
+
+                    // Update the text box
+                    if (selected.length > 0) {
+                        outputField.value = "Coffee with: " + selected.join(", ");
+                    } else {
+                        outputField.value = "";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
