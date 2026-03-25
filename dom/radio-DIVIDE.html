@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Division with Radio Number</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            font-weight: bold;
+            gap: 10px;
+        }
+        #out {
+            margin-top: 20px;
+            width: 300px;
+            height: 80px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="container" id="division">
+        <input type="number" id="Numb" placeholder="enter your number">
+        
+        <div>
+            <label>By 2</label>
+            <input type="radio" value="2" name="divide">
+            <label>By 4</label>
+            <input type="radio" value="4" name="divide">
+        </div>
+
+        <textarea id="out" readonly></textarea>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("division"); 
+            const out = document.getElementById("out");
+            const numInput = document.querySelector("#Numb");
+
+            form.addEventListener("change", (e) => {
+                // Get the value CURRENTLY in the input box
+                let number = Number(numInput.value);
+                
+                let getdivide = document.querySelector("input[name='divide']:checked");
+                
+                if (getdivide && numInput.value !== "") {
+                    let divisor = Number(getdivide.value);
+                    const remainder = number % divisor;
+                    
+                    out.value = `The entered number ${number} divided by ${divisor} gives a remainder of ${remainder}`;              
+                } else {
+                    out.value = "Please enter a number first.";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
