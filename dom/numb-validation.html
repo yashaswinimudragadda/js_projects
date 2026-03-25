@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>numberregex</title>
+    </head>
+    <body>
+        <input id="flagnum" autofocus>
+        <input type="submit" id = "btn" value="submit">
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const numberInput = document.getElementById("flagnum");
+            const btn=document.getElementById("btn");
+
+            btn.addEventListener("click",(e)=>{
+                const val=numberInput.value.trim();
+                const numberRegex = /^[0-9]+$/;
+                if (!numberRegex.test(val)) {
+                    alert("please input numeric vals");
+                    number.focus();
+                    e.preventDefault();
+                }else{
+                    alert("your number is accepted");
+                }
+            });
+        });
+
+    </script>
+</html>
