@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sum of checked numbers</title>
+        <meta charset="utf-8">
+        <style>
+    .container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        background-color: #f4f7f6;
+        font-family: sans-serif;
+    }
+
+    #myDynamicForm {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        width: 300px;
+    }
+
+    /* The Checkbox Styling */
+    input[type="checkbox"] {
+        accent-color: #2ecc71; /* This turns it green when checked */
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 0;
+        color: #333; /* Default color */
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    /* Style for the equation box */
+    #result-out {
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        color: #2c3e50;
+        resize: none;
+    }
+</style>
+    </head>
+    <body class="container">
+        <form id="myDynamicForm">
+            <h3>Select your numbers:</h3>
+            <div id="checkbox-group">
+             </div>
+        </form>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const container = document.getElementById('checkbox-group');
+
+            for(let i=1;i<=10;i++){
+                const label = document.createElement('label');
+                label.textContent=i;
+
+                const input = document.createElement('input');
+                input.type='checkbox';
+                input.name='number';
+                input.value=i;
+
+                label.appendChild(input);
+                container.appendChild(label);
+                 container.appendChild(document.createElement('br'));
+            }
+
+            const textarea=document.createElement('textarea');
+            textarea.id='result-out';
+            container.appendChild(textarea);
+            container.appendChild(document.createElement('br'));
+
+
+            const checkboxes=document.querySelectorAll("input[name='number']");
+            const resultout = document.getElementById("result-out");
+
+            checkboxes.forEach(checkbox=>{
+                checkbox.addEventListener("change",()=>{
+                    const selectedsum=Array.from(checkboxes)
+                                       .filter(i=>i.checked)
+                                       .map(i=>Number(i.value));
+
+                    const total = selectedsum.reduce((sum, val) => sum + val, 0);
+                    
+                    if(selectedsum.length>0){
+                        const equation =selectedsum.join(" + ")+"="+total;
+                        resultout.value=equation;
+                    }
+                    else{
+                        resultout.value="";
+                    }
+                                                       
+                });
+            });
+        });
+    </script>
+</html>
