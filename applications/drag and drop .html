@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Drag Image</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+         body{
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+         }
+         .upload-area {
+            width: 300px;
+            height: 150px;
+            border: 2px dashed #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background 0.2s;
+        }
+        /* Visual feedback for dragging */
+        .upload-area.dragover {
+            background-color: #f0fdf4;
+            border-color: #22c55e;
+        }
+        #preview-img {
+            max-width: 300px;
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+        }
+    </style>
+    </head>
+    <body>
+        <main>
+            <section>
+                <h3>Upload image</h3>
+                <div class="upload-area" id="drop-zone">
+                    <p id="drop-text">Drag and drop an image here or click to select a file</p>
+                    <input type="file" id="fileimg" accept="image/*" hidden>
+                </div>
+                <button id="img-submit" type="submit">click to Upload</button>
+                <button id="reset-img" type="reset">Reset</button>
+
+
+                <div class="result-section">
+                <img id="preview-img" alt="Preview">
+            </div>
+            </section>
+        </main>
+    </body>
+        <script>
+    // --- 1. DOM Element Selection ---
+    // Grabs the div where files will be dropped
+    const dropZone = document.getElementById('drop-zone');
+    // Grabs the hidden file input that actually handles the file selection
+    const fileInput = document.getElementById('fileimg');
+    // Grabs the "Submit" button to trigger the preview
+    const submitBtn = document.getElementById('img-submit'); 
+    // Grabs the "Reset" button to clear everything
+    const resetBtn = document.getElementById('reset-img');
+    // Grabs the paragraph inside the drop zone to show the file name
+    const dropText = document.getElementById('drop-text');   
+    // Grabs the image element where the final result will be displayed
+    const previewImg = document.getElementById('preview-img'); 
+
+    // --- 2. State Management ---
+    // Variable to store the file object once it is selected or dropped
+    let selectedFile = null;
+
+    // --- 3. Event Listeners ---
+    // When the user clicks the drop zone div, it programmatically clicks the hidden file input
+    dropZone.onclick = () => fileInput.click();
+
+    // Triggered when the user selects a file via the browser's file picker
+    fileInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    // --- 4. Drag & Drop Event Handlers ---
+    // Fired when a file is dragged over the drop zone
+    dropZone.ondragover = (e) => {
+        e.preventDefault(); // Prevents the browser from opening the image in a new tab
+        dropZone.classList.add('dragover'); // Adds a CSS class for visual feedback (e.g., green border)
+    };
+    
+    // Fired when the dragged file leaves the drop zone area
+    dropZone.ondragleave = () => dropZone.classList.remove('dragover'); // Removes the visual feedback
+
+    // Fired when the user releases (drops) the file onto the zone
+    dropZone.ondrop = (e) => {
+        e.preventDefault(); // Stops the browser from opening the file
+        dropZone.classList.remove('dragover'); // Removes the hover effect
+        handleFile(e.dataTransfer.files[0]); // Takes the first dropped file and sends it to our handler
+    };
+
+    // --- 5. Core Logic Functions ---
+    // Processes the file and checks if it's a valid image
+    function handleFile(file) {
+        // Checks if a file exists and if its MIME type starts with 'image/'
+        if (file && file.type.startsWith('image/')) {
+            selectedFile = file; // Saves the file object to our global variable
+            // Updates the text in the UI to show which file was chosen
+            dropText.innerText = `Selected: ${file.name}`; 
+        } else {
+            // Alerts the user if they tried to upload something that isn't an image
+            alert("Please select a valid image file.");
+        }
+    }
+
+    // Handles the "Upload" button click to show the preview
+    submitBtn.onclick = () => {
+        // Checks if the user has actually selected a file before clicking submit
+        if (selectedFile) {
+            // Creates a new FileReader object to read file data from the user's computer
+            const reader = new FileReader();
+            
+            // This function runs automatically once the file has been successfully read
+            reader.onload = (e) => {
+                // Sets the source of our <img> tag to the file's data (base64 string)
+                previewImg.src = e.target.result;
+                // Makes the image visible in the UI
+                previewImg.style.display = 'block';
+            };
+            
+            // Instructs the reader to start reading the file as a Data URL (string)
+            reader.readAsDataURL(selectedFile);
+        } else {
+            // Alerts the user if they click submit without picking a file first
+            alert('Please select an image first!');
+        }
+    };
+
+    // --- 6. Reset Logic ---
+    // Clears all inputs and resets the UI to its original state
+    resetBtn.onclick = () => {
+        selectedFile = null; // Clears the saved file from memory
+        previewImg.src = ''; // Removes the image source
+        previewImg.style.display = 'none'; // Hides the image element
+        // Resets the instruction text in the drop zone
+        dropText.innerText = "Drag and drop an image here or click to select a file";
+        fileInput.value = ''; // Clears the file input so the same file can be selected again
+    };
+</script>
+    </script>
+</html>
