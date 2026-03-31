@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Documentation</title>
+    <style>
+  /* Basic Reset & Font */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    color: #333;
+  }
+
+  /* Container for the search app */
+  main {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* Search Input Styling */
+  #searchBar {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  #searchBar:focus {
+    border-color: #4A90E2;
+  }
+
+  /* List Styling */
+  #fruitList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #fruitList li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s ease;
+  }
+
+  #fruitList li:last-child {
+    border-bottom: none;
+  }
+
+  #fruitList li:hover {
+    background-color: #f0f7ff;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+    <input type="text" id="searchBar" placeholder="Search for a fruit...">
+
+<ul id="fruitList">
+  <li>Apple</li>
+  <li>Banana</li>
+  <li>Cherry</li>
+  <li>Dragonfruit</li>
+  <li>Elderberry</li>
+</ul>
+    </main>
+
+    <script>
+        const searchBar = document.getElementById('searchBar');
+const fruits = document.querySelectorAll('#fruitList li');
+
+searchBar.addEventListener('input', (e) => {
+  const searchTerm = e.target.value.toLowerCase(); // Get user input in lowercase
+
+  fruits.forEach(fruit => {
+    const fruitName = fruit.textContent.toLowerCase();
+    
+    // Check if the fruit name contains the search term
+    if (fruitName.includes(searchTerm)) {
+      fruit.style.display = ""; // Show the item
+    } else {
+      fruit.style.display = "none"; // Hide the item
+    }
+  });
+});
+    </script>
+</body>
+</html>
