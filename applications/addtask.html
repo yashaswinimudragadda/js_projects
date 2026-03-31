@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+    <style>
+    :root {
+        --primary-color: #4a90e2;
+        --danger-color: #e74c3c;
+        --bg-color: #f4f7f6;
+        --text-color: #333;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        color: var(--text-color);
+    }
+
+    h1 { color: var(--primary-color); }
+
+    /* Input Area */
+    #task-input {
+        padding: 10px;
+        width: 250px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    #task-input:focus { border-color: var(--primary-color); }
+
+    #add-btn {
+        padding: 10px 20px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 30px 0 0;
+    }
+
+    #add-btn:hover { background-color: #357abd; }
+
+    /* List Styling */
+    #task-list {
+        list-style: none;
+        padding: 0;
+        width: 350px;
+        margin-top: 20px;
+    }
+
+    #task-list li {
+        background: white;
+        margin-bottom: 10px;
+        padding: 12px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        animation: fadeIn 0.3s ease;
+    }
+
+    /* Delete Button Styling */
+    #task-list li button {
+        background-color: transparent;
+        color: var(--danger-color);
+        border: 1px solid var(--danger-color);
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: all 0.2s;
+    }
+
+    #task-list li button:hover {
+        background-color: var(--danger-color);
+        color: white;
+    }
+
+    #out {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #666;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+    <h1>Dynamic List</h1>
+    
+    <input type="text" id="task-input" placeholder="Enter a new task">
+    <button id="add-btn">Add Task</button>
+
+    <ul id="task-list"></ul>
+    
+    <div id="out"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const taskInput = document.getElementById("task-input");
+            const taskList = document.getElementById("task-list");
+            const output = document.getElementById("out");
+            const addBtn = document.getElementById("add-btn");
+
+            // Define the function inside here, but attach it to the button via JS
+            function addTask() {
+                const taskText = taskInput.value.trim();
+
+                if (taskText !== "") {
+                    const li = document.createElement("li");
+                    const libtn = document.createElement("button");
+                    libtn.setAttribute("type", "button");
+                    libtn.textContent = "Delete";
+                    li.textContent = taskText;
+                    li.appendChild(libtn);
+                    taskList.appendChild(li);
+                    
+                    // Clear input
+                    taskInput.value = "";
+                } else {
+                    alert("Please enter a task");
+                }
+
+                // Update count (Length includes the <li> elements)
+                output.innerHTML = `<p>You have added: ${taskList.children.length} tasks</p>`;
+            }
+
+            // Attach the click event properly
+            addBtn.addEventListener("click", addTask);
+
+            // Event delegation for delete buttons
+            taskList.addEventListener("click",(e)=>{
+                if(e.target.tagName === "BUTTON"){
+                    e.target.parentElement.remove();
+                    output.innerHTML=`<p> you have added:${taskList.children.length} tasks</p>`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
