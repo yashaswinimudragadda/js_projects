@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        boby{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-card{
+            width:300px;
+            height:200px;
+            background-color: cornflowerblue;
+            color:#333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:50px;            
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-top: 10%;
+            margin-left: 30%;
+        }
+        button{
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: whitesmoke;
+            background-color: #333;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+        }
+
+        button:hover{
+            background-color: #555;
+            color: white;
+            
+        }
+        .dark-mode{
+            background-color: #333;
+            color: white;
+            box-shadow: 0 4px 8px oklch(79.247% 0.13586 210.677 / 0.89);
+        }
+        .light-mode{
+            background-color: whitesmoke;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="profile-card" class="profile-card">
+        <h2>YASHASWINI</h2>
+        <button id="btn">toggle Dark Mode</button>
+    </div>
+
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded",()=>{
+        const btn=document.getElementById("btn");
+        const profilecard=document.getElementById("profile-card");
+        btn.addEventListener("click",()=>{
+            profilecard.classList.toggle("dark-mode");
+            btn.classList.toggle("light-mode");
+            btn.textContent=profilecard.classList.contains("dark-mode")?"toggle Light Mode":"toggle Dark Mode";
+        })
+    })
+</script>
+</html>
