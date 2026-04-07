@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+    :root {
+  /* Colors from Style Guide */
+  --primary-blue-200: hsl(193, 38%, 86%);
+  --primary-green-300: hsl(150, 100%, 66%);
+  --neutral-blue-600: hsl(217, 19%, 38%);
+  --neutral-blue-900: hsl(217, 19%, 24%);
+  --neutral-blue-950: hsl(218, 23%, 16%);
+
+  /* Typography */
+  --font-family: 'Manrope', sans-serif;
+  --font-weight: 800;
+}
+
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  background-color: var(--neutral-blue-950);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Main Container */
+main {
+  background-color: var(--neutral-blue-900);
+  width: 100%;
+  max-width: 540px; /* Standard desktop size */
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Advice ID Title */
+.adivce-title {
+  color: var(--primary-green-300);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+}
+
+#adive-title {
+  display: inline;
+  margin-left: 8px;
+}
+
+/* Quote Text */
+.advice-text {
+  color: var(--primary-blue-200);
+  font-size: 28px; /* Required by Style Guide */
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+/* Divider Styling */
+#dividor {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+#dividor img {
+  width: 100%;
+  height: auto;
+}
+
+/* Dice Button */
+#btn {
+  background-color: var(--primary-green-300);
+  border: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--primary-green-300);
+  padding:15px 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: -32px; /* Centers the button on the edge */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: box-shadow 0.3s ease;
+}
+
+#btn:hover {
+  box-shadow: 0px 0px 40px var(--primary-green-300);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 375px) {
+  .advice-text {
+    font-size: 24px; /* Slightly smaller for mobile readability */
+  }
+  
+  main {
+    padding: 40px 24px;
+  }
+}
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h3 class="adivce-title">Advice #<span id="adive-title">117</span></h3>
+    <div class="advice-text">"it is easy to sit up and take notice, what's difficult is  getting up and taking action."</div>
+     <div id="dividor">
+      <img src="./images/pattern-divider-desktop.svg" alt=" ">
+      <button id="btn"><img src="./images/icon-dice.svg" alt=" "></button>
+     </div>
+  </main>
+
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById('btn');
+const adviceText = document.querySelector('.advice-text');
+const adviceId = document.getElementById('adive-title');
+
+async function fetchAdvice() {
+  try {
+    // Adding a timestamp to the URL prevents the browser from caching the result
+    const response = await fetch(`https://api.adviceslip.com/advice?t=${Date.now()}`);
+    const data = await response.json();
+    
+    adviceId.innerText = data.slip.id;
+    adviceText.innerText = `"${data.slip.advice}"`;
+  } catch (error) {
+    console.error("Error fetching advice:", error);
+  }
+}
+
+btn.addEventListener('click', fetchAdvice);
+
+// Load an initial quote on page load
+window.onload = fetchAdvice; 
+  });
+</script>
+</html>
