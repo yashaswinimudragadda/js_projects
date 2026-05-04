@@ -1,0 +1,6 @@
+function reverseString(str) {
+    // Added () after reverse
+    return str.split("").reverse().join("");
+}
+
+console.log(reverseString("GreeksForGeeks"));
