@@ -1,0 +1,4 @@
+function greet(name,callback){
+callback(`hello ,${name}!`);
+}
+greet('Geek', message=>console.log(message));
