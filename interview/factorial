@@ -1,0 +1,14 @@
+function factorial(n){
+    if(n<0){
+        console.log("please enter valid number");
+        return;
+    }
+    let factorial = 1;
+    for(let i=1;i<=n;i++){
+        factorial= factorial*i;
+    }
+    
+    console.log(factorial);
+}
+
+factorial(3);
