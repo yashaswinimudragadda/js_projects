@@ -1,0 +1,19 @@
+function fab(n) {
+    if (n <= 0) {
+        console.log("Please enter a positive number.");
+        return;
+    }
+
+    let a = 0;
+    let b = 1;
+
+    for (let i = 0; i < n; i++) {
+        console.log(a); // Print the current number in the sequence
+        
+        let c = a + b;  // Calculate the next number
+        a = b;          // Shift 'b' to 'a'
+        b = c;          // Shift the sum to 'b'
+    }
+}
+
+fab(5);
