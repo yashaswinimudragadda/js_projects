@@ -1,0 +1,26 @@
+function isPrime(num) {
+    // 1. Handle edge cases
+    if (num <= 1) return false;
+    if (num === 2) return true; // 2 is the only even prime
+
+    // 2. Optimization: Check if it's even
+    if (num % 2 === 0) return false;
+
+    // 3. Loop up to the square root
+    // We start at 3 and skip even numbers
+    for (let i = 3; i <= Math.sqrt(num); i += 2) {
+        if (num % i === 0) {
+            return false; 
+        }
+    }
+
+    return true;
+}
+
+// Usage:
+const testNum = 29;
+if (isPrime(testNum)) {
+    console.log(`${testNum} is prime!`);
+} else {
+    console.log(`${testNum} is not prime.`);
+}
