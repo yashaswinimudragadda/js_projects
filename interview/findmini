@@ -9,3 +9,10 @@ function findmin(arr){
 }
 
 console.log(findmin([1,0,-2,2]));
+
+
+function findmin(arr){
+    return Math.min(...arr);
+}
+
+console.log(findmin([5,10,-1,8]));
