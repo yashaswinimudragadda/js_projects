@@ -1,3 +1,6 @@
+
+
+
 function capitalizeFirstLetter(sentence) {
     const words = sentence.split(' ');
     for (let i = 0; i < words.length; i++) {
