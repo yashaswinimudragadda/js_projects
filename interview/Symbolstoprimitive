@@ -1,0 +1,18 @@
+let Stddetails ={
+    name:"std1",
+    roll:120,
+    
+    [Symbol.toPrimitive](hint){
+        console.log(`Hint provided by engine:"${hint}"`);
+        
+        if(hint === "string"){
+            return `Student name:${this.name}`;
+        }
+        
+        return  this.roll;
+    }
+};
+
+console.log(String(Stddetails));
+
+console.log(Stddetails*2);
