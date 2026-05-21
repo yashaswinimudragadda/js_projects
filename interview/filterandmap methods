@@ -36,3 +36,19 @@ arr.sort();
 alert(arr);// 1,15,2
 // literally all elements are conerted to strings for comparisons. for strings, lexicographic ordering is applied and indeed "2">"15".
 //To use our won sorting order we need to supply a function as the argument of arr.sort()
+
+
+//the str.split(delim) method does exactly that . it splits the  string into an array by the given delimiter delim.
+
+let names ='Bilbo,Ganadalf,Nazgul';
+let arr = names.split(',');
+
+for(let name of arr){
+    alert(`A message to ${name}.`);
+};
+
+let arr1='Bilbo,Gandalf,Nazgul,Saruman'.split(', ',2);
+alert(arr1);
+
+let str="test";
+alert(str.split(''));//t,e,s,t
