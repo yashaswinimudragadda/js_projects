@@ -9,3 +9,13 @@ let users =[
     alert(someUsers.length);
     
     console.log(someUsers.map(item => item.name));
+
+//map: it call the function for each element in an array and return the array of result
+
+let lengths = ["Bilbo","Gandalf","Nazgul"].map(item => item.length);
+alert(lengths);
+
+let names=["Bilbo","Gandalf","Nazgul"]
+console.log(names.map(item=>item));
+console.log(names.map(item => item ="Bilbo"));
+console.log(names.map(item=> item === "Bilbo"));//true
