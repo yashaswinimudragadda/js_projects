@@ -22,6 +22,14 @@ console.log(names.map(item=> item === "Bilbo"));//true
 
 // it also return the sorted array , but the returned alue is usually ignored as arr itself is modifies.
 
+
+// the method arr.reverse the order of elements in arr.
+
+let arr = [1,2,3,4,5];
+arr.reverse();
+
+alert(arr);//5,4,3,2,1
+
 let arr =[1,2,15];
 
 arr.sort();
