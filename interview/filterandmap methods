@@ -52,3 +52,15 @@ alert(arr1);
 
 let str="test";
 alert(str.split(''));//t,e,s,t
+
+// the call arr.join(glue) does the reverse to split.
+//it create a string of arr items joined by glue betwen them.
+
+let arr =['Bilbo','Gandalf','Nazgul'];
+
+let str = arr.join('; ');//Biblo;Gandal;Nazgul
+
+
+
+alert(str);
+
