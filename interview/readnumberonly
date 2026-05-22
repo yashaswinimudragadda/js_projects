@@ -12,3 +12,22 @@ function readNumber(){
 }
 
 console.log(readNumber());
+
+let student = {
+    name:'john',
+    age:30,
+    isAdmin:false,
+    courses:['html','css','js'],
+    spouse:null
+};
+
+let json = JSON.stringify(student);
+alert(typeof json);
+
+alert(json);
+
+//json.stringigy to convert objects into json.
+// json.parse to convert json back into an object.
+
+//json support following data types: objects{},array[],primitives: .strings,numbers,.boolean vaules true/false,null
+
