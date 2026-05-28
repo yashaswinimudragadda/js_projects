@@ -1,3 +1,6 @@
+
+
+
 //armstrong numbers calculation
 
 n=parseInt(prompt("enter the value"))
