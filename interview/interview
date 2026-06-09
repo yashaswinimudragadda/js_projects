@@ -1,4 +1,3 @@
-let a = prompt("first number?",1);
-let b = prompt("second number?",2);
-
-alert(+a + +b);
+alert( null>0);
+alert(null==0);
+alert(null >=0);
