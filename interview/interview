@@ -1,3 +1,4 @@
-alert( undefined > 0);//false
-alert( undefined < 0);//false
-alert( undefined == 0);//false
+alert (true || true);//true
+alert(false|| true);//true
+alert(true || false);//true
+alert(false || false);//false
