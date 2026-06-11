@@ -1,15 +1,12 @@
-let userName ='John';
+let userName = 'John';
 
 function showMessage(){
+    let userName="Bob";
 
-    userName = "Bob";
-
-    let message = ' Hello, '+userName;
+    let message = 'hello, '+ userName;
     alert(message);
-
 }
 
-alert(userName);
 showMessage();
 
 alert(userName);
