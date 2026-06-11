@@ -1,4 +1,9 @@
 function showMessage(){
-    alert('hello everyone!')
+    let message = "hello, I'm JavaScript!";
+
+    alert(message);
 }
+
 showMessage();
+
+alert(message);
