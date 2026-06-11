@@ -1,9 +1,8 @@
-function showMessage(){
-    let message = "hello, I'm JavaScript!";
+let userName = 'John';
 
+function showMessage(){
+    let message = 'Hello,'+ userName;
     alert(message);
 }
 
 showMessage();
-
-alert(message);
