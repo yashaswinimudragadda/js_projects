@@ -1,5 +1,11 @@
-let user = { age: 30};
+let codes = {
+  "+49": "Germany",
+  "+41": "Switzerland",
+  "+44": "Great Britain",
+  // ..,
+  "+1": "USA"
+};
 
-let key = "age";
-
-alert(key in user );
+for (let code in codes) {
+  alert( +code ); // 49, 41, 44, 1
+}
