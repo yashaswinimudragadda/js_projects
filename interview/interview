@@ -1,6 +1,5 @@
-let user = {
-    name: "John",
-    age:30
-};
+let user = { age: 30};
 
-alert(user.name);
+let key = "age";
+
+alert(key in user );
