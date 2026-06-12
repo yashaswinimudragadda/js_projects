@@ -1,7 +1,6 @@
-function showMessage(from, text){
-    alert(from+' '+ text);
+let user = {
+    name: "John",
+    age:30
+};
 
-}
-
-showMessage('Ann','Hello!');
-showMessage('Ann',"what's up?");
+alert(user.name);
