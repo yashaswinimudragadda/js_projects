@@ -1,15 +1,10 @@
-let user ={
-    name : "John",
-    age:30
-};
+let user = {name:"John"};
 
-let clone = {};
+let permissions1 = { canView:true};
+let permissions2 = {canEdit: true};
 
-for(let key in user){
+Object.assign(user,permissions1,permissions2);
 
-    clone[key] = user[key];
-}
-
-clone.name = "pete";
 alert(user.name);
-alert(clone.name);
+alert(user.canView);
+alert(user.canEdit);
