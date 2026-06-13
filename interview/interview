@@ -1,9 +1,15 @@
-let user = {
-    name:'John'
+let user ={
+    name : "John",
+    age:30
 };
 
-let admin = user;
+let clone = {};
 
-admin.name = 'Pete';
+for(let key in user){
 
+    clone[key] = user[key];
+}
+
+clone.name = "pete";
 alert(user.name);
+alert(clone.name);
