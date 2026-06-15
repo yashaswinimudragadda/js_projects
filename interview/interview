@@ -1,14 +1,11 @@
+
 let user = {
-    name :"John",
-    sizes:{
-        height:182,
-        width:50
-    }
+    name:"John",
+    age:30
 };
 
-let clone = structuredClone(user);
+user.sayHi = function(){
+    alert("hello!");
+};
 
-alert(user.sizes === clone.sizes);
-
-user.sizes.width= 60;
-alert(clone.sizes.width);
+user.sayHi();
