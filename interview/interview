@@ -1,11 +1,18 @@
-
 let user = {
-    name:"John",
-    age:30
+    name:"John"
+};
+let admin = {
+    name:"admin"
 };
 
-user.sayHi = function(){
-    alert("hello!");
-};
+function sayHi(){
+    alert(this.name);
+}
 
-user.sayHi();
+user.f = sayHi;
+admin.f=sayHi;
+
+user.f();
+admin.f();
+
+admin['f']();
