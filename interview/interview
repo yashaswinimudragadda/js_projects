@@ -1,18 +1,9 @@
-let user = {
-    name:"John"
-};
-let admin = {
-    name:"admin"
-};
-
-function sayHi(){
-    alert(this.name);
+function User(name){
+    this.name = name;
+    this.isAdmi = false;
 }
 
-user.f = sayHi;
-admin.f=sayHi;
+let user = new User("Jack");
 
-user.f();
-admin.f();
-
-admin['f']();
+alert(user.name);
+alert(user.isAdmi);
