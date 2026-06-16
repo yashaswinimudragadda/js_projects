@@ -1,9 +1,14 @@
-function User(name){
-    this.name = name;
-    this.isAdmi = false;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int a ;
+        for(int i=1;i<=3;i++){
+             a = scan.nextInt();
+             System.out.println(a);
+        }
+
+    }
 }
-
-let user = new User("Jack");
-
-alert(user.name);
-alert(user.isAdmi);
