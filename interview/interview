@@ -1,55 +1,41 @@
-import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
-class Result {
 
-    /*
-     * Complete the 'findDay' function below.
-     *
-     * The function is expected to return a STRING.
-     * The function accepts following parameters:
-     *  1. INTEGER month
-     *  2. INTEGER day
-     *  3. INTEGER year
-     */
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
 
-    public static String findDay(int month, int day, int year) {
-        
-       java.time.LocalDate localDate = java.time.LocalDate.of(year, month, day);  
-       
-       return localDate.getDayOfWeek().name();
-    }
+public class CurrencyFormatter {
+    public static void main(String[] args) {
+        double payment = 12324.134;
 
-}
+        // 1. US Format
+        NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        String us = usFormat.format(payment);
 
-public class Solution {
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        // 2. India Format (Customized to match "Rs." prefix)
+        NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
+        DecimalFormatSymbols indiaSymbols = ((DecimalFormat) indiaFormat).getDecimalFormatSymbols();
+        indiaSymbols.setCurrencySymbol("Rs.");
+        ((DecimalFormat) indiaFormat).setDecimalFormatSymbols(indiaSymbols);
+        String india = indiaFormat.format(payment);
 
-        String[] firstMultipleInput = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+        // 3. China Format
+        NumberFormat chinaFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
+        String china = chinaFormat.format(payment);
 
-        int month = Integer.parseInt(firstMultipleInput[0]);
-
-        int day = Integer.parseInt(firstMultipleInput[1]);
-
-        int year = Integer.parseInt(firstMultipleInput[2]);
-
-        String res = Result.findDay(month, day, year);
-
-        bufferedWriter.write(res);
-        bufferedWriter.newLine();
-
-        bufferedReader.close();
-        bufferedWriter.close();
+        // 4. France Format (Customized to guarantee the specific spacing and Euro symbol placement)
+        NumberFormat franceFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+        DecimalFormatSymbols franceSymbols = ((DecimalFormat) franceFormat).getDecimalFormatSymbols();
+        // Ensuring non-breaking space is used for grouping to match your exact output
+        franceSymbols.setGroupingSeparator('\u00A0'); 
+        ((DecimalFormat) franceFormat).setDecimalFormatSymbols(franceSymbols);
+        String france = franceFormat.format(payment);
+U
+        // Print Outputs
+        System.out.println("US: " + us);
+        System.out.println("India: " + india);
+        System.out.println("China: " + china);
+        System.out.println("France: " + france);
     }
 }
