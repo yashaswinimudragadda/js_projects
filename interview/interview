@@ -1,22 +1,17 @@
-import java.util.*;
 import java.io.*;
 
-class Solution{
-    public static void main(String []argh){
-        Scanner in = new Scanner(System.in);
-        int t=in.nextInt();
-        for(int i=0;i<t;i++){
-            int a = in.nextInt();
-            int b = in.nextInt();
-            int n = in.nextInt();
-            
-            int currentSum=a;
-            for(int j=0;j<n;j++){
-                currentSum +=(1<<j)*b;
-                System.out.print(currentSum+" ");
-            }
-            System.out.println();
-            
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner in = new Scanner (System.in);
+        
+        for(int i=1;i<=3;i++){
+            String str = in.nextLine();
+            System.out.println(i+" "+str); 
         }
         in.close();
     }
