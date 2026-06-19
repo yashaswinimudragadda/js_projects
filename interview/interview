@@ -1,41 +1,28 @@
+import java.io.*;
+import java.util.*;
 
+public class Solution {
 
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
-import java.util.Locale;
-
-public class CurrencyFormatter {
     public static void main(String[] args) {
-        double payment = 12324.134;
-
-        // 1. US Format
-        NumberFormat usFormat = NumberFormat.getCurrencyInstance(Locale.US);
-        String us = usFormat.format(payment);
-
-        // 2. India Format (Customized to match "Rs." prefix)
-        NumberFormat indiaFormat = NumberFormat.getCurrencyInstance(new Locale("en", "IN"));
-        DecimalFormatSymbols indiaSymbols = ((DecimalFormat) indiaFormat).getDecimalFormatSymbols();
-        indiaSymbols.setCurrencySymbol("Rs.");
-        ((DecimalFormat) indiaFormat).setDecimalFormatSymbols(indiaSymbols);
-        String india = indiaFormat.format(payment);
-
-        // 3. China Format
-        NumberFormat chinaFormat = NumberFormat.getCurrencyInstance(Locale.CHINA);
-        String china = chinaFormat.format(payment);
-
-        // 4. France Format (Customized to guarantee the specific spacing and Euro symbol placement)
-        NumberFormat franceFormat = NumberFormat.getCurrencyInstance(Locale.FRANCE);
-        DecimalFormatSymbols franceSymbols = ((DecimalFormat) franceFormat).getDecimalFormatSymbols();
-        // Ensuring non-breaking space is used for grouping to match your exact output
-        franceSymbols.setGroupingSeparator('\u00A0'); 
-        ((DecimalFormat) franceFormat).setDecimalFormatSymbols(franceSymbols);
-        String france = franceFormat.format(payment);
-U
-        // Print Outputs
-        System.out.println("US: " + us);
-        System.out.println("India: " + india);
-        System.out.println("China: " + china);
-        System.out.println("France: " + france);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc= new Scanner(System.in);
+        String A = sc.next();
+        String B = sc.next();
+        
+        System.out.println(A.length()+B.length());
+        
+        if(A.compareTo(B)>0){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+        
+        String capitalizedA= A.substring(0,1).toUpperCase()+A.substring(1);
+        String capitalizedB=B.substring(0,1).toUpperCase()+B.substring(1);
+        
+        System.out.println(capitalizedA+" "+capitalizedB);
+        
+        sc.close();
+        
     }
 }
