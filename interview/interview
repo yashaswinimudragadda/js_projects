@@ -1,30 +1,23 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 public class Solution {
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+       Scanner in = new Scanner(System.in);
+       while(in.hasNext()){
+        String IP = in.next();
+        System.out.println(IP.matches(new MyRegex().pattern));
+       } 
+       in.close();
         
-        // Read the number of test cases
-        int testCases = Integer.parseInt(in.nextLine());
-        
-        while (testCases > 0) {
-            String pattern = in.nextLine();
-            
-            // Try to compile the regex pattern
-            try {
-                Pattern.compile(pattern);
-                // If compilation succeeds without throwing an exception:
-                System.out.println("Valid");
-            } catch (PatternSyntaxException e) {
-                // If compilation fails and throws a PatternSyntaxException:
-                System.out.println("Invalid");
-            }
-            
-            testCases--;
-        }
-        
-        in.close();
     }
+}
+
+class MyRegex{
+    private static final String zeroTo255 = "(\\d{1,2}|0\\d{2}|1\\d{2}|2[0-4]\\d|25[0-5])";
+    
+    public final String pattern = "^"+zeroTo255+"\\."+zeroTo255+"\\."+zeroTo255+"\\."+zeroTo255+"$";
 }
