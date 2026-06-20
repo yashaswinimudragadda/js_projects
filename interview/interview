@@ -1,39 +1,30 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class Solution {
-
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         
-        Scanner sc=new Scanner(System.in);
-        String A=sc.next();
-        String var;
-             int n;
-        /* Enter your code here. Print output to STDOUT. */
+        // Read the number of test cases
+        int testCases = Integer.parseInt(in.nextLine());
         
-        if(A.equals(A.toLowerCase())){
+        while (testCases > 0) {
+            String pattern = in.nextLine();
             
-           var="";
-           n=A.length();
-           
-           while(n>0){
-            var=var+A.charAt(n-1);
-            n--;
-           }
-           
-        if(var.equals(A)){
-            System.out.println("Yes");
-           } else{
-            System.out.print("No");
-           }
-           
+            // Try to compile the regex pattern
+            try {
+                Pattern.compile(pattern);
+                // If compilation succeeds without throwing an exception:
+                System.out.println("Valid");
+            } catch (PatternSyntaxException e) {
+                // If compilation fails and throws a PatternSyntaxException:
+                System.out.println("Invalid");
+            }
+            
+            testCases--;
         }
         
-      
-        
-        sc.close();
+        in.close();
     }
 }
-
-
-
